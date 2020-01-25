@@ -46,53 +46,181 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Countries */
-.countries {
+.js-countries {
     flex-basis: 34%;
 }
 
-.countries__header {
+.js-countries__header {
     text-align: left;
     margin-bottom: 15px;
 }
 
-.countries__item {
+.js-countries__item {
     background-color: white;
     padding: 10px;
     cursor: pointer;
     border-bottom: 2px solid rgba(47, 26, 99, 0.07);
 }
 
-.countries__item:nth-child(2) {
+.js-countries__item:nth-child(2) {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-.countries__item:last-child {
+.js-countries__item:last-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border-bottom: 0;
 }
 
-.countries__item:hover, .countries__item.active{
+.js-countries__item:hover, .js-countries__item.active{
     background-color: #4e97ff;
     color: white;
 }
 
-.countries__item.active .countries__item-name,
-.countries__item:hover .countries__item-name {
+.js-countries__item.active .js-countries__item-name,
+.js-countries__item:hover .js-countries__item-name {
     color: white;
 }
 
-.countries__item-name {
+.js-countries__item-name {
     color: blue;
     margin-bottom: 15px;
 }
 
 /* Cities */
-.cities {
+.js-cities {
     flex-basis: 64%;
 }
 
-.cities__header {
+.js-cities__header {
     margin-bottom: 15px;
+}
+
+.js-cities__item {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border: 1px solid #4e97ff;
+    background-color: white;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+.js-cities__item:hover .btn {
+    display: inline-block;
+}
+.js-cities__item:nth-child(2) {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.js-cities__item:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 0;
+}
+
+.js-cities__item-add-btn {
+    cursor: pointer;
+    margin: 15px 0 15px 10px;
+    padding: 15px 25px;
+    background-color: #3785ff;
+    color: white;
+    border: none;
+    border-radius: 7px;
+}
+
+.js-cities__item-add-btn:hover {
+    background-color: #1a16ff;
+}
+
+.js-cities__item-name-label {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.js-cities__item-name {
+    border: none;
+}
+
+.js-cities__item-name:focus {
+    border: 1px solid #ff061a;
+}
+
+.js-cities__item-label-country-name {
+    max-width: 500px;
+    width: 100%;
+    border: 0;
+}
+
+.js-cities__item-label-country-name:focus {
+    border: 0;
+}
+
+.js-cities__item-description {
+    width: 100%;
+    padding-right: 50px;
+    overflow: auto;
+    resize: none;
+    max-width: 500px;
+    border: 0;
+}
+
+.js-cities__item-description:focus {
+    border: 0;
+}
+
+/*Cities Buttons */
+.js-cities__item-buttons {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 40%;
+    z-index: 1000;
+    font-size: 20px;
+    color: black;
+}
+
+.btn {
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: #1516ff;
+    display: none;
+}
+
+.btn:hover {
+    background-color: #4e97ff;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    display: block;
+    z-index: 10069;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.footer__text {
+    font-size: 12px;
+}
+
+.footer__developers-contact {
+    text-decoration: none;
+    color: #1516ff;
+    cursor: pointer;
+}
+
+.footer__developers-contact:hover {
+    color: #ff061a;
+    text-decoration: underline;
 }

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
     <script src="./assets/js/app.js" defer></script>
+    <script src="https://kit.fontawesome.com/68f86c23c2.js" crossorigin="anonymous" defer></script>
 </head>
 <body>
 
@@ -20,37 +21,132 @@
 
 <main class="main">
     <div class="container container--main">
-        <div class="countries">
-            <h2 class="countries__header">Countries</h2>
-            <div class="countries__item">
-                <h3 class="countries__item-name">UK</h3>
-                <p class="countries__item-text">The United Kingdom of Great Britain
+        <div class="js-countries">
+            <h2 class="js-countries__header">Countries</h2>
+            <div class="js-countries__item">
+                <h3 class="js-countries__item-name">UK</h3>
+                <p class="js-countries__item-text">The United Kingdom of Great Britain
                     and Northern Ireland, commonly known as the United Kingdom(UK) or
                     Britain, is a sovereign state in Europe</p>
             </div>
-            <div class="countries__item">
-                <h3 class="countries__item-name">France</h3>
-                <p class="countries__item-text">France, officially the French Republic,
+            <div class="js-countries__item">
+                <h3 class="js-countries__item-name">France</h3>
+                <p class="js-countries__item-text">France, officially the French Republic,
                     is a unitary sovereign state comprising territory
                     in western Europe and several overseas regions and territories</p>
             </div>
-            <div class="countries__item">
-                <h3 class="countries__item-name">Spain</h3>
-                <p class="countries__item-text">Spain, officially the Kingdom of Spain, is a sovereign state
+            <div class="js-countries__item">
+                <h3 class="js-countries__item-name">Spain</h3>
+                <p class="js-countries__item-text">Spain, officially the Kingdom of Spain, is a sovereign state
                     located on the Iberian Peninsula in southwestern Europe."</p>
             </div>
-            <div class="countries__item">
-                <h3 class="countries__item-name">Germany</h3>
-                <p class="countries__item-text">Germany, officially the Federal Republic of Germany,
+            <div class="js-countries__item">
+                <h3 class="js-countries__item-name">Germany</h3>
+                <p class="js-countries__item-text">Germany, officially the Federal Republic of Germany,
                     is a federal parliamentary republic in western - central Europe."</p>
             </div>
+        </div> <!-- Countries -->
+
+        <div class="js-cities">
+            <h2 class="js-cities__header">Cities</h2>
+            <div class="js-cities__item js-cities__item-add-btn-wrapper">
+                <button class="js-cities__item-add-btn" type="submit">+ Add City</button>
+            </div>
+            <div class="js-cities__item">
+                <div class="js-cities__item-inner-wrapper">
+                    <label class="js-cities__item-name-label">
+                        <input type="text" class="js-cities__item-label-country-name" readonly/>
+                        <textarea rows="5" cols="33" class="js-cities__item-description" readonly >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!</textarea>
+                    </label>
+                </div>
+                <div class="js-cities__item-buttons">
+                    <button type="button" class="js-cities__item-edit-btn btn">Edit</button>
+                    <button type="button" class="js-cities__item-delete-btn btn">Delete</button>
+                </div>
+            </div>
+            <div class="js-cities__item">
+                <div class="js-cities__item-inner-wrapper">
+                    <label class="js-cities__item-name-label">
+                        <input type="text" class="js-cities__item-label-country-name" readonly/>
+                        <textarea rows="5" cols="33" class="js-cities__item-description" readonly >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!</textarea>
+                    </label>
+                </div>
+                <div class="js-cities__item-buttons">
+                    <button type="button" class="js-cities__item-edit-btn btn">Edit</button>
+                    <button type="button" class="js-cities__item-delete-btn btn">Delete</button>
+                </div>
+            </div>
+            <div class="js-cities__item">
+                <div class="js-cities__item-inner-wrapper">
+                    <label class="js-cities__item-name-label">
+                        <input type="text" class="js-cities__item-label-country-name" readonly/>
+                        <textarea rows="5" cols="33" class="js-cities__item-description" readonly >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!</textarea>
+                    </label>
+                </div>
+                <div class="js-cities__item-buttons">
+                    <button type="button" class="js-cities__item-edit-btn btn">Edit</button>
+                    <button type="button" class="js-cities__item-delete-btn btn">Delete</button>
+                </div>
+            </div>
+            <div class="js-cities__item">
+                <div class="js-cities__item-inner-wrapper">
+                    <label class="js-cities__item-name-label">
+                        <input type="text" class="js-cities__item-label-country-name" readonly/>
+                        <textarea rows="5" cols="33" class="js-cities__item-description" readonly >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!</textarea>
+                    </label>
+                </div>
+                <div class="js-cities__item-buttons">
+                    <button type="button" class="js-cities__item-edit-btn btn">Edit</button>
+                    <button type="button" class="js-cities__item-delete-btn btn">Delete</button>
+                </div>
+            </div>
+            <div class="js-cities__item">
+                <div class="js-cities__item-inner-wrapper">
+                    <label class="js-cities__item-name-label">
+                        <input type="text" class="js-cities__item-label-country-name" readonly/>
+                        <textarea rows="5" cols="33" class="js-cities__item-description" readonly >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!</textarea>
+                    </label>
+                </div>
+                <div class="js-cities__item-buttons">
+                    <button type="button" class="js-cities__item-edit-btn btn">Edit</button>
+                    <button type="button" class="js-cities__item-delete-btn btn">Delete</button>
+                </div>
+            </div>
+            <div class="js-cities__item">
+                <div class="js-cities__item-inner-wrapper">
+                    <label class="js-cities__item-name-label">
+                        <input type="text" class="js-cities__item-label-country-name" readonly/>
+                        <textarea rows="5" cols="33" class="js-cities__item-description" readonly >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!</textarea>
+                    </label>
+                </div>
+                <div class="js-cities__item-buttons">
+                    <button type="button" class="js-cities__item-edit-btn btn">Edit</button>
+                    <button type="button" class="js-cities__item-delete-btn btn">Delete</button>
+                </div>
+            </div><div class="js-cities__item">
+            <div class="js-cities__item-inner-wrapper">
+                <label class="js-cities__item-name-label">
+                    <input type="text" class="js-cities__item-label-country-name" readonly/>
+                    <textarea rows="5" cols="33" class="js-cities__item-description" readonly >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!</textarea>
+                </label>
+            </div>
+            <div class="js-cities__item-buttons">
+                <button type="button" class="js-cities__item-edit-btn btn">Edit</button>
+                <button type="button" class="js-cities__item-delete-btn btn">Delete</button>
+            </div>
         </div>
-        <div class="cities">
-            <h2 class="cities__header">Cities</h2>
-        </div>
-    </div>
+
+        </div> <!-- Cities -->
+    </div> <!-- Container -->
 </main>
 
+<footer class="footer">
+    <div class="container">
+        <p class="footer__text">Developer's contact:
+            <a href="https://t.me/nosanctuary" target="_blank" class="footer__developers-contact">Dmitry Doroshko</a>
+        </p>
+    </div>
+</footer>
 
 </body>
 </html>
