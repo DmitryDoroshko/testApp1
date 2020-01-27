@@ -107,12 +107,22 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     position: relative;
 }
-.js-cities__item:hover .btn {
-    display: inline-block;
-}
-.js-cities__item:nth-child(2) {
+
+.js-cities__item-add-btn-wrapper {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border: 1px solid #4e97ff;
+    background-color: white;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.js-cities__item:hover .btn {
+    display: inline-block;
 }
 
 .js-cities__item:last-child {
@@ -199,6 +209,73 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #4e97ff;
 }
 
+/* Add city info */
+.js-cities__item-add-city-info {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    border: 1px solid #4e97ff;
+    background-color: white;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.js-cities__item-add-city-info-header {
+    margin: 10px 0 0 20px;
+    width: 100%;
+    color: #1516ff;
+    font-size: 18px;
+}
+
+.textarea {
+    border-radius: 5px;
+    width: 90%;
+    resize: none;
+    margin: 10px 20px 5px;
+    overflow: auto;
+    border:1px solid blue;
+    padding: 15px 5px 5px 5px;
+}
+
+.js-cities__item-add-city-buttons {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.js-cities__item-add-city-btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    background-color: #1516ff;
+}
+
+.js-cities__item-add-city-btn:hover {
+    background-color: #4e97ff;
+}
+
+.js-cities__item-add-city-cancel-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+}
+
+.js-cities__item-add-city-cancel-btn:hover {
+    background-color: #8fff8b;
+}
+
 /* Footer */
 .footer {
     position: fixed;
@@ -223,4 +300,9 @@ h1, h2, h3, h4, h5, h6 {
 .footer__developers-contact:hover {
     color: #ff061a;
     text-decoration: underline;
+}
+
+/* Visually hidden */
+.visually-hidden {
+    display: none;
 }
