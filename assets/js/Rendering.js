@@ -1,7 +1,7 @@
 import Listeners from "./Listeners.js";
 
 export default class Rendering {
-    static createCityItemElement(cityName, cityDescription, citiesId) {
+    static createCityItemElement(cityName, cityDescription, citiesId, citiesContainerDiv, citiesData) {
         let cityItem = document.createElement('div');
         cityItem.classList.add('js-cities__item');
         // Wrapper
@@ -51,7 +51,9 @@ export default class Rendering {
         buttonDelete.classList.add('btn');
         buttonDelete.innerText = 'Delete';
 
-        // TODO: Add event listeners to buttons
+        let listeners = new Listeners();
+        listeners.createButtonEditListener(buttonEdit, citiesData, citiesContainerDiv);
+        listeners.createButtonDeleteListener(buttonDelete, citiesData, citiesContainerDiv);
 
         buttonsDiv.appendChild(buttonEdit);
         buttonsDiv.appendChild(buttonDelete);
@@ -67,7 +69,7 @@ export default class Rendering {
         // Second we render new cities to citiesContainerDiv
         citiesData.forEach((city, id) => {
             if (city['country_id'] === selectedCountryId) {
-                let newCityElement = Rendering.createCityItemElement(city['title'], city['desc'], id);
+                let newCityElement = Rendering.createCityItemElement(city['title'], city['desc'], id, citiesContainerDiv, citiesData);
                 citiesContainerDiv.append(newCityElement);
             }
         });

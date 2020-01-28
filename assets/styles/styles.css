@@ -43,11 +43,13 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     padding: 20px 0;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 /* Countries */
 .js-countries {
-    flex-basis: 34%;
+    max-width: 340px;
+    width: 100%
 }
 
 .js-countries__header {
@@ -90,7 +92,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Cities */
 .js-cities {
-    flex-basis: 64%;
+    max-width: 640px;
+    width: 100%;
 }
 
 .js-cities__header {
@@ -308,4 +311,17 @@ h1, h2, h3, h4, h5, h6 {
 /* Visually hidden */
 .visually-hidden {
     display: none;
+}
+
+@media (max-width: 920px) {
+    .js-cities {
+        flex-basis: 100%;
+    }
+    .js-countries {
+        flex-basis: 100%;
+    }
+
+    .container--main {
+        justify-content: center;
+    }
 }

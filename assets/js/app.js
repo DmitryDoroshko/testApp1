@@ -1,13 +1,19 @@
-import { countriesData } from './countries-data.js';
-import { citiesData } from './cities-data.js';
 import Binding  from "./Binding.js";
 import Listeners from "./Listeners.js";
 import Rendering from "./Rendering.js";
+import DataHandler from "./DataHandler.js";
+
+let citiesData = [{ "id": 1, "country_id": 1, "title": "London", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" },
+    { "id": 2, "country_id": 1, "title": "Liverpool", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" },
+    { "id": 3, "country_id": 2, "title": "Paris", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" },
+    { "id": 4, "country_id": 3, "title": "Madrid", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" },
+    { "id": 5, "country_id": 4, "title": "Berlin", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" },
+    { "id": 6, "country_id": 4, "title": "Munich", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" },
+    { "id": 7, "country_id": 4, "title": "Hamburg", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" }];
 
 // Main sections
 let countriesDiv = Binding.bindCountries();
 let countriesItems = Binding.bindCountriesItems();
-console.log(countriesItems);
 let citiesDiv = Binding.bindCities();
 let citiesContainerDiv = Binding.bindCitiesContainerDiv();
 
@@ -22,18 +28,19 @@ let cityNameTextAreaForm = Binding.bindCityNameTextAreaForm();
 let cityDescriptionTextAreaForm = Binding.bindCityDescriptionTextAreaForm();
 let submitBtnForm = Binding.bindSubmitBtnForm();
 
-let selectedCountryId = 1;
+let listeners = new Listeners();
 
-submitBtnForm.addEventListener('click', () => {
-    console.log(cityNameTextAreaForm.value);
-    console.log(cityDescriptionTextAreaForm.value);
-});
+// Retrieve data from local storage
+if (DataHandler.retrieveFromLocalStorage() != null) {
+    console.log('DataHandler.retrieveFromLocalStorage() != null');
+    citiesData = DataHandler.retrieveFromLocalStorage();
+}
 
 // By default showing the first country in the list
-Rendering.renderCities(citiesContainerDiv, selectedCountryId, citiesData);
+Rendering.renderCities(citiesContainerDiv, 1, citiesData);
 
-Listeners.createAddCityBtnListener(addCityBtn, addCityPreviewWrapper, addCityFormWrapper);
-Listeners.createCancelBtnFormListener(cancelBtnForm, addCityPreviewWrapper, addCityFormWrapper);
-Listeners.createCountryDivListener(countriesItems, selectedCountryId, citiesData, citiesContainerDiv);
-
+listeners.createAddCityBtnListener(addCityBtn, addCityPreviewWrapper, addCityFormWrapper);
+listeners.createCancelBtnFormListener(cancelBtnForm, addCityPreviewWrapper, addCityFormWrapper);
+listeners.createCountryDivListener(countriesItems, 1, citiesData, citiesContainerDiv);
+listeners.createAddCityFormBtnListener(submitBtnForm, cityNameTextAreaForm, cityDescriptionTextAreaForm, citiesData, citiesContainerDiv);
 
