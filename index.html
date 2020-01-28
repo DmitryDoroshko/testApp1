@@ -8,8 +8,13 @@
     <title>Test App</title>
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-    <script type="module" src="./assets/js/app.js" defer></script>
     <script src="https://kit.fontawesome.com/68f86c23c2.js" crossorigin="anonymous" defer></script>
+    <!-- Scripts -->
+    <script type="module" src="./assets/js/Visual.js"></script>
+    <script type="module" src="./assets/js/Binding.js"></script>
+    <script type="module" src="./assets/js/Listeners.js"></script>
+    <script type="module" src="./assets/js/Rendering.js"></script>
+    <script type="module" src="./assets/js/app.js"></script>
 </head>
 <body>
 
@@ -72,19 +77,20 @@
             </div>
             <!--  Add city form -->
 
-            <div class="js-cities__item">
-                <div class="js-cities__item-inner-wrapper">
-                    <label class="js-cities__item-name-label">
-                        <input type="text" class="js-cities__item-label-country-name" readonly/>
-                        <textarea rows="5" cols="33" class="js-cities__item-description" readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!</textarea>
-                    </label>
-                </div>
-                <div class="js-cities__item-buttons">
-                    <button type="button" class="js-cities__item-edit-btn btn">Edit</button>
-                    <button type="button" class="js-cities__item-delete-btn btn">Delete</button>
+            <div class="js-cities-itself">
+                <div class="js-cities__item">
+                    <div class="js-cities__item-inner-wrapper">
+                        <label class="js-cities__item-name-label">
+                            <textarea rows="2" cols="33" class="js-cities__item-label-country-name" readonly>London</textarea>
+                            <textarea rows="5" cols="33" class="js-cities__item-description" readonly>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!</textarea>
+                        </label>
+                    </div>
+                    <div class="js-cities__item-buttons">
+                        <button type="button" class="js-cities__item-edit-btn btn">Edit</button>
+                        <button type="button" class="js-cities__item-delete-btn btn">Delete</button>
+                    </div>
                 </div>
             </div>
-
         </div> <!-- Cities -->
     </div> <!-- Container -->
 </main>
