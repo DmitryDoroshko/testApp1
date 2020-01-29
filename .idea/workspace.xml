@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1be663b-2ada-49ce-9078-0c7366e95042" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/DataHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/DataHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/DataHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/Listeners.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Listeners.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/Rendering.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Rendering.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/cities-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/countries-data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/styles/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +72,9 @@
       <workItem from="1580030977371" duration="7636000" />
       <workItem from="1580116151607" duration="11020000" />
       <workItem from="1580212510554" duration="15563000" />
+      <workItem from="1580228239381" duration="217000" />
+      <workItem from="1580236574367" duration="8203000" />
+      <workItem from="1580281500090" duration="495000" />
     </task>
     <task id="LOCAL-00001" summary="Layout 88 percent done">
       <created>1579979712945</created>
@@ -98,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580214994445</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Editing, deleting, local storage implemented">
+      <created>1580228278778</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1580228278778</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,17 +124,18 @@
     <MESSAGE value="Layout 88 percent done" />
     <MESSAGE value="Layout done, add city preview and add city form done" />
     <MESSAGE value="Ability to change cities items according to selected country" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ability to change cities items according to selected country" />
+    <MESSAGE value="Editing, deleting, local storage implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Editing, deleting, local storage implemented" />
   </component>
   <component name="WindowStateProjectService">
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580227450615">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="160" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1580227450615" />
-    <state x="399" y="0" key="CommitChangelistDialog2" timestamp="1580214993710">
+    <state x="399" y="0" key="CommitChangelistDialog2" timestamp="1580228277892">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="399" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580214993710" />
+    <state x="399" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580228277892" />
     <state width="1515" height="239" key="GridCell.Tab.0.bottom" timestamp="1580135814903">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -161,10 +168,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="239" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580135814903" />
-    <state x="577" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580228247265">
+    <state x="577" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580281998344">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="577" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1580228247265" />
+    <state x="577" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1580281998344" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1580123802961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

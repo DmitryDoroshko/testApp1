@@ -1,4 +1,5 @@
 export default class DataHandler {
+
     static addCity(citiesData, country_id, title, description) {
         const newID = this.generateNewId(citiesData);
         let newCity = {
@@ -42,8 +43,12 @@ export default class DataHandler {
     static getElementsID(citiesData, cityName, cityDescription) {
         let citiesId = -1;
         citiesData.forEach(city => {
-           if (city['title'] === cityName && city['desc'] === cityDescription) {
+            console.log('cityDescription', cityDescription);
+            console.log('city.desc', city['desc']);
+            console.log(city);
+           if (city['title'].replace(/(\r\n|\n|\r)/gm, "") === cityName && city['desc'].replace(/(\r\n|\n|\r)/gm, "") === cityDescription) {
                citiesId = city['id'];
+               return citiesId;
            }
         });
         return citiesId;

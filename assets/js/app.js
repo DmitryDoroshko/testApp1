@@ -32,7 +32,6 @@ let listeners = new Listeners();
 
 // Retrieve data from local storage
 if (DataHandler.retrieveFromLocalStorage() != null) {
-    console.log('DataHandler.retrieveFromLocalStorage() != null');
     citiesData = DataHandler.retrieveFromLocalStorage();
 }
 
