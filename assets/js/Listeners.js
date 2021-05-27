@@ -1,6 +1,5 @@
 import Visual from "./Visual.js";
 import Rendering from "./Rendering.js";
-import Binding from "./Binding.js";
 import DataHandler from "./DataHandler.js";
 export default class Listeners {
 

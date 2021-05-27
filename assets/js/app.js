@@ -12,9 +12,9 @@ let citiesData = [{ "id": 1, "country_id": 1, "title": "London", "desc": "Lorem 
     { "id": 7, "country_id": 4, "title": "Hamburg", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" }];
 
 // Main sections
-let countriesDiv = Binding.bindCountries();
+//let countriesDiv = Binding.bindCountries();
 let countriesItems = Binding.bindCountriesItems();
-let citiesDiv = Binding.bindCities();
+//let citiesDiv = Binding.bindCities();
 let citiesContainerDiv = Binding.bindCitiesContainerDiv();
 
 // Add city preview elements

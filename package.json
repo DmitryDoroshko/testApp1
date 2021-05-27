@@ -1,0 +1,19 @@
+{
+  "name": "dmitry-test-app",
+  "version": "1.0.0",
+  "description": "A Test app to manipulate countries and cities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryDoroshko/testApp1.git"
+  },
+  "author": "Dmitry Doroshko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryDoroshko/testApp1/issues"
+  },
+  "homepage": "https://github.com/DmitryDoroshko/testApp1#readme"
+}

@@ -8,7 +8,26 @@ export default class DataHandler {
             "title" : title,
             "desc" : description
         };
-        citiesData.push(newCity);
+
+        let titleInvalid = false;
+        let descriptionInvalid = false;
+
+        if (title.trim() === "") {
+            titleInvalid = true;
+        }
+        if (description.trim() === "") {
+            descriptionInvalid = true;
+        }
+
+        if (titleInvalid && descriptionInvalid) {
+            alert("City title and description are invalid");
+        } else if (titleInvalid) {
+            alert("City title is invalid!");
+        } else if (descriptionInvalid) {
+            alert("City description is invalid!");
+        } else {
+            citiesData.push(newCity);
+        }
     }
 
     static deleteElement(citiesData, id) {
