@@ -2,20 +2,20 @@ import Listeners from "./Listeners.js";
 
 export default class Rendering {
     static createCityItemElement(cityName, cityDescription, citiesId, citiesContainerDiv, citiesData) {
-        let cityItem = getCityItem();
-        let cityItemInnerWrapper = getCityItemInnerWrapper();
-        let cityLabel = getCityLabel();
-        let cityNameTextArea = getCityNameTextArea();
-        let cityDescriptionTextArea = getCityDescriptionTextArea();
+        let cityItem = Rendering.getCityItem();
+        let cityItemInnerWrapper = Rendering.getCityItemInnerWrapper();
+        let cityLabel = Rendering.getCityLabel();
+        let cityNameTextArea = Rendering.getCityNameTextArea(cityName);
+        let cityDescriptionTextArea = Rendering.getCityDescriptionTextArea(cityDescription);
 
         cityLabel.appendChild(cityNameTextArea);
         cityLabel.appendChild(cityDescriptionTextArea);
         cityItemInnerWrapper.appendChild(cityLabel);
         cityItem.appendChild(cityItemInnerWrapper);
 
-        let buttonsDiv = getButtonsDiv();
-        let buttonEdit = getButtonEdit();
-        let buttonDelete = getButtonDelete();
+        let buttonsDiv = Rendering.getButtonsDiv();
+        let buttonEdit = Rendering.getButtonEdit();
+        let buttonDelete = Rendering.getButtonDelete();
 
         let listeners = new Listeners();
         listeners.createButtonEditListener(buttonEdit, citiesData, citiesContainerDiv);
@@ -68,7 +68,7 @@ export default class Rendering {
         return cityLabel;
     }
 
-    static getCityNameTextArea() {
+    static getCityNameTextArea(cityName) {
         let cityNameTextArea = document.createElement('textarea');
         cityNameTextArea.classList.add('js-cities__item-label-country-name');
         cityNameTextArea.setAttribute('rows', '2');
@@ -78,13 +78,14 @@ export default class Rendering {
         return cityNameTextArea;
     }
 
-    static getCityDescriptionTextArea() {
+    static getCityDescriptionTextArea(cityDescription) {
         let cityDescriptionTextArea = document.createElement('textarea');
         cityDescriptionTextArea.classList.add('js-cities__item-description');
         cityDescriptionTextArea.setAttribute('rows', '5');
         cityDescriptionTextArea.setAttribute('cols', '33');
         cityDescriptionTextArea.readOnly = true;
         cityDescriptionTextArea.innerText = String(cityDescription);
+        return cityDescriptionTextArea;
     }
 
     static getButtonsDiv() {
