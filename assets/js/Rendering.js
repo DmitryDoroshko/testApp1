@@ -111,4 +111,8 @@ export default class Rendering {
         buttonDelete.innerText = 'Delete';
         return buttonDelete;
     }
+
+    static showAlert(title) {
+        alert(title);
+    }
 }

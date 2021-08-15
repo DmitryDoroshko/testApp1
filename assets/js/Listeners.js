@@ -19,9 +19,12 @@ export default class Listeners {
 
     createAddCityFormBtnListener(submitBtnForm, cityNameTextAreaForm, cityDescriptionTextAreaForm, citiesData, citiesContainerDiv) {
         submitBtnForm.addEventListener('click', (e) => {
-            DataHandler.addCity(citiesData, this.selectedCountryID, String(cityNameTextAreaForm.value), String(cityDescriptionTextAreaForm.value));
-            Rendering.renderCities(citiesContainerDiv, this.selectedCountryID, citiesData);
-            DataHandler.pushToLocalStorage(citiesData);
+            if (!DataHandler.addCity(citiesData, this.selectedCountryID, String(cityNameTextAreaForm.value), String(cityDescriptionTextAreaForm.value))) {
+                Rendering.showAlert("City Not Added");
+            } else {
+                Rendering.renderCities(citiesContainerDiv, this.selectedCountryID, citiesData);
+                DataHandler.pushToLocalStorage(citiesData);
+            }
         });
     }
 

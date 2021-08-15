@@ -1,6 +1,8 @@
 export default class DataHandler {
-
     static addCity(citiesData, country_id, title, description) {
+        if (!this.isTitleAndDescriptionValid(title, description)) {
+            return false;
+        }
         const newID = this.generateNewId(citiesData);
         let newCity = {
             "id": newID,
@@ -9,25 +11,8 @@ export default class DataHandler {
             "desc" : description
         };
 
-        let titleInvalid = false;
-        let descriptionInvalid = false;
-
-        if (title.trim() === "") {
-            titleInvalid = true;
-        }
-        if (description.trim() === "") {
-            descriptionInvalid = true;
-        }
-
-        if (titleInvalid && descriptionInvalid) {
-            alert("City title and description are invalid");
-        } else if (titleInvalid) {
-            alert("City title is invalid!");
-        } else if (descriptionInvalid) {
-            alert("City description is invalid!");
-        } else {
-            citiesData.push(newCity);
-        }
+        citiesData.push(newCity); 
+        return true;
     }
 
     static deleteElement(citiesData, id) {
@@ -92,5 +77,22 @@ export default class DataHandler {
             newArray = JSON.parse(localStorage.getItem('cities-data'));
         }
         return newArray;
+    }
+
+    static isTitleAndDescriptionValid(title, description) {
+        if (!this.isValidText(title)) {
+            return false;
+        }
+        if (!this.isValidText(description)) {
+            return false;
+        }
+        return true;
+    }
+
+    static isValidText(text) {
+        if (text.trim() === "") {
+            return false;
+        }
+        return true;
     }
 }
