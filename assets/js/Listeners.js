@@ -64,7 +64,7 @@ export default class Listeners {
 
             // Add event listener on enter pressed
             document.body.addEventListener('keyup', function (e) {
-                if (e.keyCode == 13) {
+                if (e.keyCode === 13) {
                     console.log('clicked enter');
                     let newCityNameTextarea = event.target.parentElement.parentElement.querySelector('.js-cities__item-label-country-name');
                     let newCityDescriptionTextarea = event.target.parentElement.parentElement.querySelector('.js-cities__item-description');

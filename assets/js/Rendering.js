@@ -2,54 +2,20 @@ import Listeners from "./Listeners.js";
 
 export default class Rendering {
     static createCityItemElement(cityName, cityDescription, citiesId, citiesContainerDiv, citiesData) {
-        let cityItem = document.createElement('div');
-        cityItem.classList.add('js-cities__item');
-        // Wrapper
-        let cityItemInnerWrapper = document.createElement('div');
-        cityItemInnerWrapper.classList.add('js-cities__item-inner-wrapper');
-        // Label
-        let cityLabel = document.createElement('label');
-        cityLabel.classList.add('js-cities__item-name-label');
-
-        // City Name Textarea
-        let cityNameTextArea = document.createElement('textarea');
-        cityNameTextArea.classList.add('js-cities__item-label-country-name');
-        cityNameTextArea.setAttribute('rows', '2');
-        cityNameTextArea.setAttribute('cols', '33');
-        cityNameTextArea.readOnly = true;
-        cityNameTextArea.innerText = String(cityName);
-
-        // City description textarea
-        let cityDescriptionTextArea = document.createElement('textarea');
-        cityDescriptionTextArea.classList.add('js-cities__item-description');
-        cityDescriptionTextArea.setAttribute('rows', '5');
-        cityDescriptionTextArea.setAttribute('cols', '33');
-        cityDescriptionTextArea.readOnly = true;
-        cityDescriptionTextArea.innerText = String(cityDescription);
+        let cityItem = getCityItem();
+        let cityItemInnerWrapper = getCityItemInnerWrapper();
+        let cityLabel = getCityLabel();
+        let cityNameTextArea = getCityNameTextArea();
+        let cityDescriptionTextArea = getCityDescriptionTextArea();
 
         cityLabel.appendChild(cityNameTextArea);
         cityLabel.appendChild(cityDescriptionTextArea);
-
         cityItemInnerWrapper.appendChild(cityLabel);
-
         cityItem.appendChild(cityItemInnerWrapper);
-        // Buttons div
-        let buttonsDiv = document.createElement('div');
-        buttonsDiv.classList.add('js-cities__item-buttons');
 
-        // Button edit
-        let buttonEdit = document.createElement('button');
-        buttonEdit.setAttribute('type', 'button');
-        buttonEdit.classList.add('js-cities__item-edit-btn');
-        buttonEdit.classList.add('btn');
-        buttonEdit.innerText = 'Edit';
-
-        // Button delete
-        let buttonDelete = document.createElement('button');
-        buttonDelete.setAttribute('type', 'button');
-        buttonDelete.classList.add('js-cities__item-delete-btn');
-        buttonDelete.classList.add('btn');
-        buttonDelete.innerText = 'Delete';
+        let buttonsDiv = getButtonsDiv();
+        let buttonEdit = getButtonEdit();
+        let buttonDelete = getButtonDelete();
 
         let listeners = new Listeners();
         listeners.createButtonEditListener(buttonEdit, citiesData, citiesContainerDiv);
@@ -82,5 +48,66 @@ export default class Rendering {
         while (container.firstChild) {
             container.removeChild(container.firstChild);
         }
+    }
+
+    static getCityItem() {
+        let cityItem = document.createElement('div');
+        cityItem.classList.add('js-cities__item');
+        return cityItem;
+    }
+
+    static getCityItemInnerWrapper() {
+        let cityItemInnerWrapper = document.createElement('div');
+        cityItemInnerWrapper.classList.add('js-cities__item-inner-wrapper');
+        return cityItemInnerWrapper;
+    }
+
+    static getCityLabel() {
+        let cityLabel = document.createElement('label');
+        cityLabel.classList.add('js-cities__item-name-label');
+        return cityLabel;
+    }
+
+    static getCityNameTextArea() {
+        let cityNameTextArea = document.createElement('textarea');
+        cityNameTextArea.classList.add('js-cities__item-label-country-name');
+        cityNameTextArea.setAttribute('rows', '2');
+        cityNameTextArea.setAttribute('cols', '33');
+        cityNameTextArea.readOnly = true;
+        cityNameTextArea.innerText = String(cityName);
+        return cityNameTextArea;
+    }
+
+    static getCityDescriptionTextArea() {
+        let cityDescriptionTextArea = document.createElement('textarea');
+        cityDescriptionTextArea.classList.add('js-cities__item-description');
+        cityDescriptionTextArea.setAttribute('rows', '5');
+        cityDescriptionTextArea.setAttribute('cols', '33');
+        cityDescriptionTextArea.readOnly = true;
+        cityDescriptionTextArea.innerText = String(cityDescription);
+    }
+
+    static getButtonsDiv() {
+        let buttonsDiv = document.createElement('div');
+        buttonsDiv.classList.add('js-cities__item-buttons');
+        return buttonsDiv;
+    }
+
+    static getButtonEdit() {
+        let buttonEdit = document.createElement('button');
+        buttonEdit.setAttribute('type', 'button');
+        buttonEdit.classList.add('js-cities__item-edit-btn');
+        buttonEdit.classList.add('btn');
+        buttonEdit.innerText = 'Edit';
+        return buttonEdit;
+    }
+
+    static getButtonDelete() {
+        let buttonDelete = document.createElement('button');
+        buttonDelete.setAttribute('type', 'button');
+        buttonDelete.classList.add('js-cities__item-delete-btn');
+        buttonDelete.classList.add('btn');
+        buttonDelete.innerText = 'Delete';
+        return buttonDelete;
     }
 }
