@@ -1,8 +1,11 @@
 export default class DataHandler {
+
     static addCity(citiesData, country_id, title, description) {
+
         if (!this.isTitleAndDescriptionValid(title, description)) {
             return false;
         }
+
         const newID = this.generateNewId(citiesData);
         let newCity = {
             "id": newID,
@@ -44,20 +47,6 @@ export default class DataHandler {
         return false;
     }
 
-    static getElementsID(citiesData, cityName, cityDescription) {
-        let citiesId = -1;
-        citiesData.forEach(city => {
-            console.log('cityDescription', cityDescription);
-            console.log('city.desc', city['desc']);
-            console.log(city);
-           if (city['title'].replace(/(\r\n|\n|\r)/gm, "") === cityName && city['desc'].replace(/(\r\n|\n|\r)/gm, "") === cityDescription) {
-               citiesId = city['id'];
-               return citiesId;
-           }
-        });
-        return citiesId;
-    }
-
     static updateElement(citiesData, elementsID, newCityName, newCityDescription) {
         citiesData.forEach(city => {
            if (city['id'] === elementsID) {
@@ -67,16 +56,42 @@ export default class DataHandler {
         });
     }
 
-    static pushToLocalStorage(citiesData) {
-        localStorage.setItem('cities-data', JSON.stringify(citiesData));
+    static pushCitiesDataToLocalStorage(citiesData) {
+        localStorage.setItem('cities-data', "" + JSON.stringify(citiesData));
     }
 
-    static retrieveFromLocalStorage() {
+    static pushSelectedCityToLocalStorage(selectedCityId) {
+        localStorage.setItem('selected-city-id', JSON.stringify(selectedCityId));
+    }
+
+    static pushSelectedCountryToLocalStorage(selectedCountryId) {
+        localStorage.setItem('selected-country-id', JSON.stringify(selectedCountryId));
+    }
+
+    static retrieveCitiesFromLocalStorage() {
         let newArray = null;
         if (localStorage.getItem("cities-data") !== null) {
             newArray = JSON.parse(localStorage.getItem('cities-data'));
         }
         return newArray;
+    }
+
+    static retrieveSelectedCityIdFromLocalStorage() {
+        let selectedCityId = null;
+        if (localStorage.getItem("selected-city-id") !== null) {
+            selectedCityId = JSON.parse(localStorage.getItem("selected-city-id"));
+        }
+        return selectedCityId;
+    }
+
+    static retrieveSelectedCountryIdFromLocalStorage() {
+        let selectedCountryId = null;
+
+        if (localStorage.getItem("selected-country-id") !== null) {
+            selectedCountryId = JSON.parse(localStorage.getItem("selected-country-id"));
+        }
+
+        return selectedCountryId;
     }
 
     static isTitleAndDescriptionValid(title, description) {

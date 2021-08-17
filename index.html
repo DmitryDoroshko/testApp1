@@ -29,24 +29,24 @@
     <div class="container container--main">
         <div class="js-countries">
             <h2 class="js-countries__header">Countries</h2>
-            <div class="js-countries__item">
+            <div class="js-countries__item" data-id="1">
                 <h3 class="js-countries__item-name">UK</h3>
                 <p class="js-countries__item-text">The United Kingdom of Great Britain
                     and Northern Ireland, commonly known as the United Kingdom(UK) or
                     Britain, is a sovereign state in Europe</p>
             </div>
-            <div class="js-countries__item">
+            <div class="js-countries__item" data-id="2">
                 <h3 class="js-countries__item-name">France</h3>
                 <p class="js-countries__item-text">France, officially the French Republic,
                     is a unitary sovereign state comprising territory
                     in western Europe and several overseas regions and territories</p>
             </div>
-            <div class="js-countries__item">
+            <div class="js-countries__item" data-id="3">
                 <h3 class="js-countries__item-name">Spain</h3>
                 <p class="js-countries__item-text">Spain, officially the Kingdom of Spain, is a sovereign state
                     located on the Iberian Peninsula in southwestern Europe."</p>
             </div>
-            <div class="js-countries__item">
+            <div class="js-countries__item" data-id="4">
                 <h3 class="js-countries__item-name">Germany</h3>
                 <p class="js-countries__item-text">Germany, officially the Federal Republic of Germany,
                     is a federal parliamentary republic in western - central Europe."</p>
@@ -54,7 +54,7 @@
         </div> <!-- Countries -->
 
         <div class="js-cities">
-            <h2 class="js-cities__header">Cities</h2>
+            <h2 class="js-cities__header">Cities <span class="js-cities-of__header"></span></h2>
             <div class="js-cities__item-add-btn-wrapper">
                 <button class="js-cities__item-add-btn" type="submit">+ Add City</button>
             </div> <!-- Add city -->
@@ -93,26 +93,5 @@
     </div>
 </footer>
 
-
-
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyDhWhDucZdZFP2WewqHjSXnjHJMruVv-Ag",
-    authDomain: "test-app-dimitri.firebaseapp.com",
-    projectId: "test-app-dimitri",
-    storageBucket: "test-app-dimitri.appspot.com",
-    messagingSenderId: "1017208527058",
-    appId: "1:1017208527058:web:0a5365c0a573060693b50b"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-</script>
 </body>
 </html>

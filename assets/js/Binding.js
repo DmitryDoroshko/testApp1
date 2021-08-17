@@ -4,7 +4,7 @@ export default class Binding {
     }
 
     static bindCountries() {
-        return document.querySelector('.js-countries');
+        return document.querySelectorAll('.js-countries__item');
     }
 
     static bindCountriesItems() {
@@ -42,4 +42,10 @@ export default class Binding {
     static bindCitiesContainerDiv() {
         return document.querySelector('.js-cities-itself');
     }
+
+    static bindCitiesOfSpan() {
+        return document.querySelector(".js-cities-of__header");
+    }
 }
+
+export let allCountries = Binding.bindCountries();
