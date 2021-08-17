@@ -32,7 +32,9 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     padding: 15px 0;
     font-size: 24px;
-    animation: moveInRight 3s ease-out;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
     backface-visibility: hidden;
 }
 
