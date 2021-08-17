@@ -32,6 +32,19 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     padding: 15px 0;
     font-size: 24px;
+    animation: moveInRight 3s ease-out;
+    backface-visibility: hidden;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
 }
 
 /* Main */
