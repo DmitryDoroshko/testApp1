@@ -1,8 +1,28 @@
 import Listeners from "./Listeners.js";
+import {allCountries} from "./Binding.js";
+import DataHandler from "./DataHandler.js";
 
 export default class Rendering {
+    static removeActiveFromAllCountriesSelected() {
+        allCountries.forEach(country => {
+           if (country.classList.contains("active")) {
+               country.classList.remove("active");
+           }
+        });
+    }
+
+    static renderSelectedCountryActive(selectedCountryId) {
+        Rendering.removeActiveFromAllCountriesSelected();
+        DataHandler.pushSelectedCountryToLocalStorage(selectedCountryId);
+        allCountries.forEach(country => {
+            if (country.dataset.id == selectedCountryId) {
+                country.classList.add("active");
+            }
+        })
+    }
+
     static createCityItemElement(cityName, cityDescription, citiesId, citiesContainerDiv, citiesData) {
-        let cityItem = Rendering.getCityItem();
+        let cityItem = Rendering.getCityItem(citiesId);
         let cityItemInnerWrapper = Rendering.getCityItemInnerWrapper();
         let cityLabel = Rendering.getCityLabel();
         let cityNameTextArea = Rendering.getCityNameTextArea(cityName);
@@ -50,9 +70,10 @@ export default class Rendering {
         }
     }
 
-    static getCityItem() {
+    static getCityItem(citiesId) {
         let cityItem = document.createElement('div');
         cityItem.classList.add('js-cities__item');
+        cityItem.dataset.id = citiesId;
         return cityItem;
     }
 

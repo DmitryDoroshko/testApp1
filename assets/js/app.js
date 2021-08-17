@@ -11,6 +11,9 @@ let citiesData = [{ "id": 1, "country_id": 1, "title": "London", "desc": "Lorem 
     { "id": 6, "country_id": 4, "title": "Munich", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" },
     { "id": 7, "country_id": 4, "title": "Hamburg", "desc": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum iure reiciendis sed voluptatibus? Consequuntur, deleniti dolores error est, expedita, facilis incidunt iure nam obcaecati odio quidem quis saepe sed veritatis!" }];
 
+let selectedCitiesId = 1;
+let selectedCountryId = 1;
+
 // Main sections
 //let countriesDiv = Binding.bindCountries();
 let countriesItems = Binding.bindCountriesItems();
@@ -30,17 +33,31 @@ let submitBtnForm = Binding.bindSubmitBtnForm();
 
 let listeners = new Listeners();
 
+if (DataHandler.retrieveSelectedCityIdFromLocalStorage() != null) {
+    selectedCitiesId = DataHandler.retrieveSelectedCityIdFromLocalStorage();
+} else {
+    DataHandler.pushSelectedCityToLocalStorage(selectedCitiesId);
+}
+
+if (DataHandler.retrieveSelectedCountryIdFromLocalStorage() != null) {
+    selectedCountryId = DataHandler.retrieveSelectedCountryIdFromLocalStorage();
+} else {
+    DataHandler.pushSelectedCountryToLocalStorage(selectedCountryId);
+}
+
 // Retrieve data from local storage
-if (DataHandler.retrieveFromLocalStorage() != null) {
-    citiesData = DataHandler.retrieveFromLocalStorage();
+if (DataHandler.retrieveCitiesFromLocalStorage() != null) {
+    citiesData = DataHandler.retrieveCitiesFromLocalStorage();
 }
 
 // By default showing the first country in the list
-Rendering.renderCities(citiesContainerDiv, 1, citiesData);
+Rendering.renderCities(citiesContainerDiv, selectedCountryId, citiesData);
+Rendering.renderSelectedCountryActive(selectedCountryId);
 
 listeners.createAddCityBtnListener(addCityBtn, addCityPreviewWrapper, addCityFormWrapper);
 listeners.createCancelBtnFormListener(cancelBtnForm, addCityPreviewWrapper, addCityFormWrapper);
 listeners.createCountryDivListener(countriesItems, 1, citiesData, citiesContainerDiv);
-listeners.createAddCityFormBtnListener(submitBtnForm, cityNameTextAreaForm, cityDescriptionTextAreaForm, citiesData, citiesContainerDiv);
+listeners.createAddCityFormBtnListener(submitBtnForm, cityNameTextAreaForm, cityDescriptionTextAreaForm, citiesData, citiesContainerDiv, addCityFormWrapper);
+
 
 
